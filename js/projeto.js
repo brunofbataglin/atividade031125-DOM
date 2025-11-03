@@ -6,6 +6,18 @@ function verificarCheck(){
     return x
 }
 
+function pegarCheck(){
+    var urg = verificarCheck();
+
+    if(urg){
+        var container = document.getElementById("notasUrgentes")
+    }
+    else{
+        var container = document.getElementById("notasNaoUrgentes")
+    }
+    return container
+}
+
 
 /*Cada nota a ser inserida seguirá o padrão de cores: Azul, Verde, Roxo.   */
 
@@ -32,15 +44,8 @@ function pegarnota(){
 
 function removerUltima(){
 
-    var urg = verificarCheck();
+    container = pegarCheck
 
-    if(urg){
-        var container = document.getElementById("notasUrgentes")
-    }
-    else{
-        var container = document.getElementById("notasNaoUrgentes")
-    }
-    
     var ultimo = container.lastElementChild;
     if(ultimo){
         container.removeChild(ultimo);
