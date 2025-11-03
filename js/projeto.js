@@ -1,8 +1,5 @@
 
-
-
-
-
+var cont = ["p1", "p2", "p3"]
 
 function verificarCheck(){
     var x = document.getElementById("urgente").checked
@@ -19,6 +16,7 @@ function pegarnota(){
         var novo = document.createElement("li")
         novo.innerText=nota
         novo.id="paragrafo"
+
         var notasUrgentes = document.getElementById("notasUrgentes")
         notasUrgentes.appendChild(novo)
     }
@@ -33,27 +31,26 @@ function pegarnota(){
 }
 
 function removerUltima(){
-    var urg = verificarCheck()
+
+    var urg = verificarCheck();
+
     if(urg){
-        if(paragrafo){
-        var paragrafo = document.getElementById("paragrafo")
-        paragrafo.remove();
+        var container = document.getElementById("notasUrgentes")
     }
     else{
-        alert("Não há texto para remover")
-    }
-    }
-    else{
-        if(paragrafo){
-        var paragrafo = document.getElementById("paragrafo")
-        paragrafo.remove();
-    }
-    else{
-        alert("Não há texto para remover")
-    }
+        var container = document.getElementById("notasNaoUrgentes")
     }
     
+    var ultimo = container.lastElementChild;
+    if(ultimo){
+        container.removeChild(ultimo);
+    } else {
+        alert("Não há notas para remover");
+    }
 }
+    
+    
+
 
 function removerTodoTexto(){
     var urgente = verificarCheck()
