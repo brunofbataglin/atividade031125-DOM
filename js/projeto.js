@@ -22,7 +22,12 @@ function pegarCheck(){
 /*Cada nota a ser inserida seguirá o padrão de cores: Azul, Verde, Roxo.   */
 
 function pegarnota(){
+
     var nota = document.getElementById("novanota").value
+    if(nota == ""){
+        return;
+    }
+
     var urgente = verificarCheck()
     
     if(urgente){
@@ -45,6 +50,7 @@ function pegarnota(){
         notasUrgentes.appendChild(novo)
         
     }
+
     else{
         var novo = document.createElement("li")
         novo.innerText=nota
@@ -60,9 +66,14 @@ function pegarnota(){
             contagem2=0
     }
     contagem2++
+
         var notasNaoUrgentes = document.getElementById("notasNaoUrgentes")
         notasNaoUrgentes.appendChild(novo)
+
     }
+
+    document.getElementById("novanota").value = "";
+    
     
 }
 
@@ -77,6 +88,7 @@ function removerUltima(){
         alert("Não há notas para remover");
     }
 }
+
     
     
 
