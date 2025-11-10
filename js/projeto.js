@@ -1,5 +1,5 @@
 
-var cont = ["p1", "p2", "p3"]
+var contagem1=1, contagem2=1
 
 function verificarCheck(){
     var x = document.getElementById("urgente").checked
@@ -24,18 +24,42 @@ function pegarCheck(){
 function pegarnota(){
     var nota = document.getElementById("novanota").value
     var urgente = verificarCheck()
+    
     if(urgente){
         var novo = document.createElement("li")
         novo.innerText=nota
-        novo.id="paragrafo"
+
+        if (contagem1 == 1){
+            novo.id="azul"
+    }
+        if (contagem1 == 2){
+            novo.id="verde"
+    }
+        if (contagem1 == 3){
+            novo.id="roxo"
+            contagem1=0
+    }
+    contagem1++
 
         var notasUrgentes = document.getElementById("notasUrgentes")
         notasUrgentes.appendChild(novo)
+        
     }
     else{
         var novo = document.createElement("li")
         novo.innerText=nota
-        novo.id="paragrafo"
+
+        if (contagem2 == 1){
+            novo.id="azul"
+    }
+        if (contagem2 == 2){
+            novo.id="verde"
+    }
+        if (contagem2 == 3){
+            novo.id="roxo"
+            contagem2=0
+    }
+    contagem2++
         var notasNaoUrgentes = document.getElementById("notasNaoUrgentes")
         notasNaoUrgentes.appendChild(novo)
     }
@@ -44,7 +68,7 @@ function pegarnota(){
 
 function removerUltima(){
 
-    container = pegarCheck
+    var container = pegarCheck()
 
     var ultimo = container.lastElementChild;
     if(ultimo){
@@ -62,23 +86,17 @@ function removerTodoTexto(){
     if(urgente){
         var urg = document.getElementById("notasUrgentes")
         urg.innerHTML=""
+        contagem1=1
     }
     else{
         var urg = document.getElementById("notasNaoUrgentes")
         urg.innerHTML=""
+        contagem2=1
     }
 }
 
 
 
-
-
-function colorir(){
-    var itens = document.querySelectorAll("p")
-    for(i=0;i<itens.length;i++){
-        itens[i].style.color="green"
-    }
-}
 
 
 

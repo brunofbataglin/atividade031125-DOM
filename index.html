@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    Monte um pequeno sistema de  notas rápidas que deve ter as seguintes funcionalidades:
-Um campo de texto e um botão “Adicionar”.
-Um botão para marcar a nota como: não urgente ou urgente.
-Cada nota digitada deve aparecer dentro de um box. As não urgentes em amarelo limão e as  urgentes em vermelho.
-
     
     <h1>Mini-Projeto</h1>
-    <p>Informe a nota </p>
+    <p>Informe a nota: </p>
     <input type="text" id="novanota">
     <br>
     <label> <input type="checkbox" id="urgente" name="urg">Urgente?</label>
@@ -24,8 +20,11 @@ Cada nota digitada deve aparecer dentro de um box. As não urgentes em amarelo l
     <input type="button" value="RemoverTudo" id="removerTudo" onclick="removerTodoTexto()">
 
     <ul>
+    <h2 id="Urg">Notas Urgentes:</h2>
     <div id="notasUrgentes"></div>
     <br>
+    
+    <h2 id="nUrg">Notas Não Urgentes:</h2>
     <div id="notasNaoUrgentes"></div>
     </ul>
 
