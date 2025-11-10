@@ -16,7 +16,7 @@ body{
   padding:50px;
 }
 
-/* controles simples */
+
 input[type="text"]{
   padding:10px 12px;
   width:320px;
@@ -24,6 +24,7 @@ input[type="text"]{
   border-radius:8px;
   background:#f0f0f0;
 }
+
 input[type="button"]{
   width:320px;
   padding:20px 12px;
