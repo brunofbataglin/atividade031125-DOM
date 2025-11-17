@@ -79,10 +79,33 @@ function pegarnota(){
 
 function removerUltima(){
 
+    var checagem = verificarCheck()
     var container = pegarCheck()
 
     var ultimo = container.lastElementChild;
     if(ultimo){
+        var idCor = ultimo.id
+        
+        if(idCor == "roxo" && checagem){
+            contagem1=3
+        }
+         else if(idCor == "verde" && checagem){
+            contagem1=2
+        }
+        else if(idCor == "azul" && checagem){
+            contagem1=1
+        }
+
+        else if(idCor == "roxo"){
+            contagem2=3
+        }
+        else if(idCor == "verde"){
+            contagem2=2
+        }
+        else if(idCor == "azul"){
+            contagem2=1
+        }
+            
         container.removeChild(ultimo);
     } else {
         alert("Não há notas para remover");
@@ -90,7 +113,7 @@ function removerUltima(){
 }
 
     
-    
+
 
 
 function removerTodoTexto(){
